@@ -2,6 +2,11 @@
   "name": "efe-karaer-archive",
   "version": "1.0.0",
   "private": true,
+  "homepage": "https://efekaraer.com",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dinosorus/efekaraer.com.git"
+  },
   "type": "module",
   "engines": {
     "node": ">=22.12.0"

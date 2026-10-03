@@ -2,7 +2,7 @@
 
 Build an absurdly polished personal joke/portfolio site about Efe Karaer, as if Efe made it himself. Efe is not the developer. Preserve the original public site's real links, gaming identity, photos, memes and self-mythologizing tone. No substantial invented personal facts. Public copy is Turkish, detached and terse; avoid excessive first-person framing or introductions. See voiceAndCopy.md for authoritative characterization.
 
-Workspace is the project root. Production domain configuration targets https://hmmokeydog.com.tr on Vercel. No deployment, push or DNS changes are authorized by that configuration. No backend, database, authentication, CMS or live API integration.
+Workspace is the project root. Production domain: https://efekaraer.com. Canonical repository: https://github.com/dinosorus/efekaraer.com. Vercel/domain configuration is handled externally; do not deploy, push or modify DNS unless requested. No backend, database, authentication, CMS or live API integration.
 
 User wants a complete responsive, accessible, performant first version with a distinct creative identity and room for future lore. Read all memory-bank files at the start of every future task per AGENTS.md.
 

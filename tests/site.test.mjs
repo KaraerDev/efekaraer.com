@@ -13,7 +13,7 @@ const clientCode = await readFile(join('dist/_astro', clientFile), 'utf8');
 async function page(route = 'arsiv/index.html', hash = '') {
   const path = route === 'index.html' ? '/' : `/${route.replace(/index\.html$/, '')}`;
   const html = await readFile(join('dist', route), 'utf8');
-  const dom = new JSDOM(html, { url: `https://hmmokeydog.com.tr${path}${hash}`, runScripts: 'outside-only', pretendToBeVisual: true });
+  const dom = new JSDOM(html, { url: `https://efekaraer.com${path}${hash}`, runScripts: 'outside-only', pretendToBeVisual: true });
   const { window } = dom;
   window.HTMLDialogElement.prototype.showModal = function () { this.open = true; };
   window.HTMLDialogElement.prototype.close = function () { this.open = false; this.dispatchEvent(new window.Event('close')); };
@@ -30,7 +30,7 @@ test('all static routes have distinct titles, language, canonical, a main landma
     assert.equal(doc.documentElement.lang, 'tr');
     assert.equal(doc.querySelectorAll('main').length, 1);
     assert.equal(doc.querySelectorAll('h1').length, 1);
-    assert.ok(doc.querySelector('link[rel="canonical"]')?.getAttribute('href')?.startsWith('https://hmmokeydog.com.tr/'));
+    assert.ok(doc.querySelector('link[rel="canonical"]')?.getAttribute('href')?.startsWith('https://efekaraer.com/'));
     titles.add(doc.title);
     dom.window.close();
   }
@@ -120,7 +120,7 @@ test('direct exhibit URLs open correctly and copy an archive permalink', async (
   assert.equal(document.querySelector('#lightbox-title').textContent, 'Çakma Mühendis Karaer');
   document.querySelector('#exhibit-copy').click();
   await setImmediate();
-  assert.equal(dom.window.copiedText, 'https://hmmokeydog.com.tr/arsiv/#eser-7');
+  assert.equal(dom.window.copiedText, 'https://efekaraer.com/arsiv/#eser-7');
   assert.ok(document.querySelector('#lightbox #toast')); // Announcement must remain in the active modal.
   dom.window.close();
 });

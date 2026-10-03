@@ -153,7 +153,7 @@ test('profile destinations, email copy, direct routes and assets', async ({ page
     const response = await page.goto(path);
     expect(response?.status()).toBe(200);
     // Astro preview accepts both forms; Vercel owns the production slash redirect.
-    await expect(page.locator('link[rel="canonical"]')).toHaveAttribute('href', `https://hmmokeydog.com.tr${path}/`);
+    await expect(page.locator('link[rel="canonical"]')).toHaveAttribute('href', `https://efekaraer.com${path}/`);
     await expect(page.locator('h1')).toBeVisible();
   }
   for (const path of ['/favicon.svg', '/social-card.png', '/robots.txt', '/sitemap.xml']) {

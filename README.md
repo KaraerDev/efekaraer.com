@@ -1,6 +1,6 @@
 # Efe Karaer — Kişisel Mesele
 
-A Turkish, deliberately overproduced personal archive for **Efe Karaer**, built from the original public site. Production domain: https://hmmokeydog.com.tr. This project is about Efe, never the developer. No deployment has been performed.
+A Turkish, deliberately overproduced personal archive for **Efe Karaer**, built from the original public site. Production domain: https://efekaraer.com. Repository: https://github.com/dinosorus/efekaraer.com. This project is about Efe, never the developer. No deployment has been performed.
 
 The approved concept is an unnecessarily official collector’s edition of one person: warm paper, ink, vermilion, giant condensed type, numbered exhibits, and an approval seal. Copy is detached, terse and assured. Efe does not introduce himself, seek approval or explain the joke. The production does the work. See `memory-bank/voiceAndCopy.md` for the authoritative writing rules.
 
@@ -76,7 +76,7 @@ This workspace stores Chromium locally. Before its browser tests in PowerShell, 
 
 ## Future Vercel deployment
 
-The site is ready for a normal static Astro deployment at https://hmmokeydog.com.tr: install with `npm ci`, build with `npm run build`, output `dist`, Node 22.12+. `vercel.json` supplies static output settings, trailing slashes and basic security headers. Preview accepts both slash forms; Vercel performs the canonical redirect. `dist/404.html` is the custom error document. No adapter, server, database, CMS, authentication or environment secrets are needed. Do not deploy or modify DNS without a subsequent user request.
+The site is ready for a normal static Astro deployment at https://efekaraer.com: install with `npm ci`, build with `npm run build`, output `dist`, Node 22.12+. `vercel.json` supplies static output settings, trailing slashes and basic security headers. Preview accepts both slash forms; Vercel performs the canonical redirect. `dist/404.html` is the custom error document. No adapter, server, database, CMS, authentication or environment secrets are needed. Do not deploy or modify DNS without a subsequent user request.
 
 ## Remaining review
 

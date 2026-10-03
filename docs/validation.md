@@ -33,13 +33,13 @@ Screenshots/traces in test-results/browser and HTML report in playwright-report 
 
 ## Static Vercel readiness
 
-Production domain: https://hmmokeydog.com.tr. Install npm ci; build npm run build; output dist; Node 22.12+ (Node 22 runtime is used locally). No adapter, backend, functions, database, CMS, authentication, secrets or remote runtime service. Local fonts/images and the incident asset need no connection to the production domain.
+Production domain: https://efekaraer.com. Canonical repository: https://github.com/dinosorus/efekaraer.com. Install npm ci; build npm run build; output dist; Node 22.12+ (Node 22 runtime is used locally). No adapter, backend, functions, database, CMS, authentication, secrets or remote runtime service. Local fonts/images and the incident asset need no connection to the production domain.
 
 Direct slash and slashless navigation to /arsiv, /rank and /baglantilar works in Astro production preview. Unknown top-level and nested paths use the custom 404; it returns HTTP 404. The generated 404 is noindex with canonical /404.html. vercel.json trailingSlash=true configures host redirects; dist/404.html supplies the Vercel fallback. Vercel's edge redirect/status/header behavior has not been tested through a deployment because deployment is forbidden in this task.
 
 Configuration checked against [Vercel Astro documentation](https://vercel.com/docs/frameworks/frontend/astro), [custom 404 guidance](https://vercel.com/kb/guide/custom-404-page), and [trailingSlash configuration](https://vercel.com/docs/project-configuration/vercel-json#trailingslash). After manual deployment to the configured production domain, smoke-check slash redirects, unknown-path status and headers.
 
-Favicon SVG, social-card PNG, robots.txt and four-route sitemap return HTTP 200 locally. Canonical/OG URLs and sitemap use https://hmmokeydog.com.tr; robots.txt names that sitemap, and social preview is local and absolute. No localhost/developer-identity leak in output. External links retain their exact sourced destinations and appropriate rel attributes; mailto and clipboard address are correct. Third-party destination uptime/content was not re-audited as a release dependency.
+Favicon SVG, social-card PNG, robots.txt and four-route sitemap return HTTP 200 locally. Canonical/OG URLs and sitemap use https://efekaraer.com; robots.txt names that sitemap, and social preview is local and absolute. No localhost/developer-identity leak in output. External links retain their exact sourced destinations and appropriate rel attributes; mailto and clipboard address are correct. Third-party destination uptime/content was not re-audited as a release dependency.
 
 ## Dependency/security review
 
