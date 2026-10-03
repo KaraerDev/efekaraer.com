@@ -35,11 +35,17 @@ Screenshots/traces in test-results/browser and HTML report in playwright-report 
 
 Production domain: https://efekaraer.com. Canonical repository: https://github.com/dinosorus/efekaraer.com. Install npm ci; build npm run build; output dist; Node 22.12+ (Node 22 runtime is used locally). No adapter, backend, functions, database, CMS, authentication, secrets or remote runtime service. Local fonts/images and the incident asset need no connection to the production domain.
 
-Direct slash and slashless navigation to /arsiv, /rank and /baglantilar works in Astro production preview. Unknown top-level and nested paths use the custom 404; it returns HTTP 404. The generated 404 is noindex with canonical /404.html. vercel.json trailingSlash=true configures host redirects; dist/404.html supplies the Vercel fallback. Vercel's edge redirect/status/header behavior has not been tested through a deployment because deployment is forbidden in this task.
+Direct slash and slashless navigation to /arsiv, /rank and /baglantilar works in Astro production preview. Unknown top-level and nested paths use the custom 404; it returns HTTP 404. The generated 404 is noindex with canonical /404.html. vercel.json trailingSlash=true configures host redirects; dist/404.html supplies the Vercel fallback. Vercel's edge redirect/status/header behavior has not been tested remotely.
 
 Configuration checked against [Vercel Astro documentation](https://vercel.com/docs/frameworks/frontend/astro), [custom 404 guidance](https://vercel.com/kb/guide/custom-404-page), and [trailingSlash configuration](https://vercel.com/docs/project-configuration/vercel-json#trailingslash). After manual deployment to the configured production domain, smoke-check slash redirects, unknown-path status and headers.
 
 Favicon SVG, social-card PNG, robots.txt and four-route sitemap return HTTP 200 locally. Canonical/OG URLs and sitemap use https://efekaraer.com; robots.txt names that sitemap, and social preview is local and absolute. No localhost/developer-identity leak in output. External links retain their exact sourced destinations and appropriate rel attributes; mailto and clipboard address are correct. Third-party destination uptime/content was not re-audited as a release dependency.
+
+## Technical SEO and entity markup
+
+The homepage title and description identify Efe Karaer naturally; archive, rank and links routes retain distinct titles and descriptions. All routes have efekaraer.com canonicals, matching `og:url`, `og:site_name`, and Twitter/Open Graph image metadata with image alt text. The homepage H1 is Efe Karaer. The homepage alone emits JSON-LD `WebSite`, `ProfilePage` and `Person` nodes; Person alternate names are `dinosorusxd` and `SANSARSALVO55`, `sameAs` uses the existing MetaTFT, OP.GG and LinkedIn profiles, and image references the existing crawlable Efe portrait. The `dinosorusxd` handle appears once in visible self-address metadata.
+
+Robots allows crawling and references the sitemap. The sitemap lists only `/`, `/arsiv/`, `/rank/` and `/baglantilar/`; the custom 404 is noindex and omitted. No meta keywords or SEO-only hidden text was added. Automated invariants pass: 16 DOM tests and 20 Chromium scenarios. After release, validate JSON-LD with Schema Markup Validator, inspect the live homepage and sitemap in Google Search Console, check canonical/indexing status, and request homepage recrawl if needed. Search Console was not accessed from this workspace.
 
 ## Dependency/security review
 
@@ -54,8 +60,8 @@ The registry offers no compatible automatic fix. Proposed forced remedies downgr
 
 Reviewed deliverable source/config/output for credentials, tokens, private keys, .env files, TODO/FIXME, debug logging, localhost and incorrect developer identity. None found. Original public meme/source imagery remains intentionally retained; no new private financial/personal information added. This is a source review, not a guarantee against every possible secret pattern.
 
-.gitignore excludes node_modules, dist, tools/browser caches, QA results/reports, logs, .env variants, .vercel and build info. .vercelignore excludes source provenance, Memory Bank, tests and QA artifacts. Originals under docs/original stay intact; only unused efek.com2 runtime derivatives removed. No Git repository exists yet; manual initialization/upload is the next workflow step, not an app blocker.
+.gitignore excludes node_modules, dist, tools/browser caches, QA results/reports, logs, .env variants, .vercel and build info. .vercelignore excludes source provenance, Memory Bank, tests and QA artifacts. Originals under docs/original stay intact; only unused efek.com2 runtime derivatives removed. The existing Git origin is https://github.com/dinosorus/efekaraer.com.git; no commit or push was made during this validation.
 
 38 responsive WebP variants total **1,503,310 bytes**. Production JavaScript **5,704 bytes**, CSS **37,733 bytes**, before compression. No framework hydration, analytics, remote fonts, embeds or autoplay. The incident image is requested only when opened; evidence uses native lazy loading. All page/hidden-state copy reread together, including metadata, accessible labels, original captions, notes, toast messages, statements and footer. Authentic phrase retained exactly; public migration terms absent.
 
-No deployment, Git push, existing-site edit, DNS or domain change was performed. No known application blocker remains for the user's manual GitHub/Vercel step; upstream advisories and browser/host verification boundaries above remain explicit.
+No deployment, Git push, existing-site edit or DNS change was performed. The latest requested local SEO changes have not been published; upstream advisories and browser/host verification boundaries above remain explicit.

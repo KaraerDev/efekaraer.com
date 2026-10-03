@@ -23,6 +23,12 @@ test('all routes render without overflow, broken assets, script errors or access
   for (const route of routes) {
     const response = await page.goto(route);
     expect.soft(response?.status(), route).toBe(route.includes('olmayan') ? 404 : 200);
+    if (route === '/') {
+      await expect(page.locator('h1')).toContainText('EFE');
+      await expect(page.locator('h1')).toContainText('KARAER');
+      await expect.poll(() => page.locator('script[type="application/ld+json"]').textContent()).toContain('dinosorusxd');
+    }
+    if (route === '/baglantilar/') await expect(page.locator('.self-link')).toContainText('dinosorusxd');
     await page.evaluate(() => document.fonts.ready);
     // Real scrolling loads the gallery's native lazy images before the full-page capture.
     await page.evaluate(async () => {

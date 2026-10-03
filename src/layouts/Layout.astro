@@ -9,12 +9,43 @@ import '../styles/lore.css';
 import '../styles/qa-fixes.css';
 import Lightbox from '../components/Lightbox.astro';
 import Incident from '../components/Incident.astro';
-import { exhibits } from '../data/content';
+import { exhibits, links } from '../data/content';
 interface Props { title?: string; description?: string; section?: string }
-const { title = 'Efe Karaer — İyi mi çok mu faça?', description = 'Efe Karaer — Kişisel Mesele. SANSARSALVO55, TFT, fotoğraflar ve arşiv.', section = 'cover' } = Astro.props;
+const { title = 'Efe Karaer — İyi mi çok mu faça?', description = 'Efe Karaer. Kişisel arşiv, fotoğraflar ve oyun kayıtları.', section = 'cover' } = Astro.props;
 const nav = [{ href: '/', label: 'Kapak', id: 'cover' }, { href: '/arsiv/', label: 'Arşiv', id: 'archive' }, { href: '/rank/', label: 'Rank', id: 'rank' }, { href: '/baglantilar/', label: 'Bağlantılar', id: 'links' }];
 const canonicalPath = section === '404' ? '/404.html' : `${Astro.url.pathname.replace(/\/$/, '')}/`;
 const canonical = new URL(canonicalPath, Astro.site);
+const socialImage = new URL('/social-card.png', Astro.site);
+const profileId = new URL('/#efe-karaer', Astro.site).href;
+const profileUrls = links.filter((link) => ['MetaTFT', 'OP.GG', 'LinkedIn'].includes(link.name)).map((link) => link.url);
+const profileStructuredData = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'WebSite',
+      '@id': new URL('/#website', Astro.site).href,
+      name: 'Efe Karaer',
+      alternateName: 'Efe Karaer — Kişisel Mesele',
+      url: new URL('/', Astro.site).href,
+    },
+    {
+      '@type': 'ProfilePage',
+      '@id': new URL('/#profile', Astro.site).href,
+      url: new URL('/', Astro.site).href,
+      name: 'Efe Karaer — Kişisel Mesele',
+      mainEntity: { '@id': profileId },
+    },
+    {
+      '@type': 'Person',
+      '@id': profileId,
+      name: 'Efe Karaer',
+      alternateName: ['dinosorusxd', 'SANSARSALVO55'],
+      url: new URL('/', Astro.site).href,
+      image: new URL('/images/karaer-9-960.webp', Astro.site).href,
+      sameAs: profileUrls,
+    },
+  ],
+};
 ---
 <!doctype html>
 <html lang="tr">
@@ -24,11 +55,13 @@ const canonical = new URL(canonicalPath, Astro.site);
     {section === '404' && <meta name="robots" content="noindex" />}
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="canonical" href={canonical} />
-    <meta property="og:type" content="website" /><meta property="og:locale" content="tr_TR" />
+    <meta property="og:type" content="website" /><meta property="og:locale" content="tr_TR" /><meta property="og:site_name" content="Efe Karaer" />
     <meta property="og:title" content={title} /><meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
-    <meta property="og:image" content={new URL('/social-card.png', Astro.site)} />
+    <meta property="og:image" content={socialImage} /><meta property="og:image:alt" content="Efe Karaer — Kişisel Mesele sosyal önizleme görseli" />
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} /><meta name="twitter:description" content={description} /><meta name="twitter:image" content={socialImage} /><meta name="twitter:image:alt" content="Efe Karaer — Kişisel Mesele sosyal önizleme görseli" />
+    {section === 'cover' && <script type="application/ld+json" set:html={JSON.stringify(profileStructuredData).replace(/</g, '\\u003c')} />}
     <title>{title}</title>
   </head>
   <body data-section={section}>

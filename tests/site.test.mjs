@@ -24,17 +24,66 @@ async function page(route = 'arsiv/index.html', hash = '') {
 
 test('all static routes have distinct titles, language, canonical, a main landmark and one h1', async () => {
   const titles = new Set();
+  const descriptions = new Set();
   for (const route of routes) {
     const dom = new JSDOM(await readFile(join('dist', route), 'utf8'));
     const doc = dom.window.document;
+    assert.doesNotMatch(dom.serialize(), /hmmokeydog\.com\.tr|localhost|127\.0\.0\.1/i);
     assert.equal(doc.documentElement.lang, 'tr');
     assert.equal(doc.querySelectorAll('main').length, 1);
     assert.equal(doc.querySelectorAll('h1').length, 1);
     assert.ok(doc.querySelector('link[rel="canonical"]')?.getAttribute('href')?.startsWith('https://efekaraer.com/'));
+    assert.ok(doc.querySelector('meta[name="description"]')?.content.length > 30);
+    assert.equal(doc.querySelector('meta[property="og:site_name"]')?.content, 'Efe Karaer');
+    assert.equal(doc.querySelector('meta[property="og:url"]')?.content, doc.querySelector('link[rel="canonical"]')?.href);
+    assert.equal(doc.querySelector('meta[property="og:image:alt"]')?.content.length > 0, true);
+    assert.equal(doc.querySelector('meta[name="twitter:title"]')?.content, doc.title);
+    assert.equal(doc.querySelector('meta[name="twitter:image:alt"]')?.content.length > 0, true);
+    assert.equal(doc.querySelector('meta[name="keywords"]'), null);
     titles.add(doc.title);
+    descriptions.add(doc.querySelector('meta[name="description"]').content);
     dom.window.close();
   }
   assert.equal(titles.size, routes.length);
+  assert.equal(descriptions.size, routes.length);
+});
+
+test('homepage JSON-LD identifies the site and Efe without invented profiles', async () => {
+  const html = await readFile('dist/index.html', 'utf8');
+  const doc = new JSDOM(html).window.document;
+  const data = JSON.parse(doc.querySelector('script[type="application/ld+json"]').textContent);
+  const graph = data['@graph'];
+  const website = graph.find(node => node['@type'] === 'WebSite');
+  const profilePage = graph.find(node => node['@type'] === 'ProfilePage');
+  const person = graph.find(node => node['@type'] === 'Person');
+  assert.equal(website.name, 'Efe Karaer');
+  assert.equal(website.url, 'https://efekaraer.com/');
+  assert.equal(profilePage.mainEntity['@id'], person['@id']);
+  assert.equal(person.name, 'Efe Karaer');
+  assert.deepEqual(person.alternateName, ['dinosorusxd', 'SANSARSALVO55']);
+  assert.deepEqual(person.sameAs, [
+    'https://www.metatft.com/player/tr/SANSARSALVO55-DEL%C4%B0',
+    'https://op.gg/lol/summoners/tr/SANSARSALVO55-DEL%C4%B0',
+    'https://www.linkedin.com/in/efekaraer',
+  ]);
+  assert.equal(person.image, 'https://efekaraer.com/images/karaer-9-960.webp');
+  await access(join('dist', person.image.replace('https://efekaraer.com/', '')));
+  assert.match(doc.querySelector('h1').textContent, /EFE\s*KARAER/);
+  const linksDoc = new JSDOM(await readFile('dist/baglantilar/index.html', 'utf8')).window.document;
+  assert.match(linksDoc.querySelector('.self-link').textContent, /dinosorusxd/);
+});
+
+test('robots and sitemap expose only the intended indexable routes', async () => {
+  const robots = await readFile('dist/robots.txt', 'utf8');
+  const sitemap = new JSDOM(await readFile('dist/sitemap.xml', 'utf8'), { contentType: 'text/xml' }).window.document;
+  assert.match(robots, /User-agent:\s*\*\s*Allow:\s*\//);
+  assert.match(robots, /Sitemap:\s*https:\/\/efekaraer\.com\/sitemap\.xml/);
+  const paths = [...sitemap.querySelectorAll('loc')].map(node => node.textContent);
+  assert.deepEqual(paths, ['https://efekaraer.com/', 'https://efekaraer.com/arsiv/', 'https://efekaraer.com/rank/', 'https://efekaraer.com/baglantilar/']);
+  assert.ok(!paths.some(path => path.includes('404')));
+  const notFound = new JSDOM(await readFile('dist/404.html', 'utf8')).window.document;
+  assert.equal(notFound.querySelector('meta[name="robots"]')?.content, 'noindex');
+  assert.equal(notFound.querySelector('script[type="application/ld+json"]'), null);
 });
 
 test('every local link and image in production output resolves; images have alt and dimensions', async () => {

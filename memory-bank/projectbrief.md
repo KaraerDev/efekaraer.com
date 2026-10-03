@@ -8,4 +8,4 @@ User wants a complete responsive, accessible, performant first version with a di
 
 The visual design and “Efe Karaer — Kişisel Mesele” concept are approved. The subsequent persona pass changes copy, not design. Efe's status is implicit and self-evident; the site glorifies him without enthusiastic self-presentation, visitor courtship, or roast humor.
 
-The final enrichment request permits a restrained opt-in visual incident, supplied real lore distributed within existing pages, and small fixes grounded in browser observations. Preserve exact authentic `çok iyi site yaptım.`; never publish predecessor-site framing. Manual GitHub/Vercel readiness is the current delivery target, not permission to publish.
+The final enrichment request permits a restrained opt-in visual incident, supplied real lore distributed within existing pages, and small fixes grounded in browser observations. Preserve exact authentic `çok iyi site yaptım.`; never publish predecessor-site framing. Production is live at https://efekaraer.com. Current SEO/entity changes are local until separately released; do not deploy or push without an explicit request.
