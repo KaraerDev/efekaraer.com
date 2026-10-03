@@ -1,0 +1,17 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { links } from '../data/content';
+---
+<Layout title="Bağlantılar — Efe Karaer" section="links" description="Efe Karaer — MetaTFT, OP.GG, Spotify, LinkedIn ve iletişim.">
+  <section class="page-heading shell"><div class="section-label mono"><span>BAĞLANTI REHBERİ</span><span>PROFİLLER / İLETİŞİM</span></div><h1>DİĞER<br /><span>ADRESLER.</span></h1><div class="page-heading-bottom"><p>Oyun, müzik, iş.<br /><span class="muted">Profil bağlantıları.</span></p><span class="connection-mark" aria-hidden="true">↗</span></div></section>
+  <section class="directory shell" aria-label="Sosyal medya ve iletişim bağlantıları">{links.map(link => <>
+    <a class="directory-row" href={link.url} target={link.url.startsWith('mailto:') ? undefined : '_blank'} rel={link.url.startsWith('mailto:') ? undefined : 'noopener noreferrer'}><span class="mono directory-category">{link.category}</span><div><h2>{link.name}</h2><p>{link.description}</p></div><span class="directory-arrow" aria-label={link.url.startsWith('mailto:') ? 'E-posta yaz' : 'Yeni sekmede açılır'}>↗</span></a>
+    {link.name === 'Spotify' && <aside class="listening-note" aria-label="Sade dinleme kaydı">
+      <span class="mono">SADE / DİNLEME KAYDI</span>
+      <div class="listening-content"><p class="listening-count"><strong>193</strong><span>parça / tek haftalık kayıt<br />Canlı sayaç değil.</span></p>
+      <dl><div><dt>Albüm tercihi</dt><dd>Stronger Than Pride</dd></div><div><dt>Parça</dt><dd>Paradise</dd></div><div><dt>Raftaki plak</dt><dd>Love (Deluxe)</dd></div></dl></div>
+      <p class="listening-footnote mono">ÇALIŞMA DÜZENİ: PLAK AÇIK.</p>
+    </aside>}
+  </>)}<div class="directory-row self-link"><span class="mono directory-category">06 / ANA ADRES</span><div><h2>hmmokeydog.com.tr</h2><p>Burası.</p></div><a href="/" class="directory-arrow" aria-label="Ana sayfaya dön">↩</a></div></section>
+  <section class="mail-note shell"><span class="mono">REKLAM & İŞBİRLİĞİ</span><p>Teklifler<br />e-postaya.</p><button id="copy-email" class="text-link">E-posta adresini kopyala ↗</button></section>
+</Layout>

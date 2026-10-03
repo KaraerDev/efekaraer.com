@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>İYİ Mİ ÇOK MU FAÇA?</title>
+<meta name="description" content="SANSARSALVO55 için Runeterra temalı, tek sayfalık bir arşiv ve meme galerisi.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="is-sidebar-open">
+
+<svg width="0" height="0" style="position:absolute">
+  <filter id="archiveNoise">
+    <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="2" stitchTiles="stitch" result="noise"/>
+    <feColorMatrix in="noise" type="matrix"
+      values="0 0 0 0 0
+              0 0 0 0 0
+              0 0 0 0 0
+              0 0 0 0.8 0"/>
+  </filter>
+</svg>
+
+<div class="ambient ambient--top" aria-hidden="true"></div>
+<div class="ambient ambient--bottom" aria-hidden="true"></div>
+<div class="grain" aria-hidden="true"></div>
+
+<button class="sidebar-toggle" id="sidebarToggle" aria-controls="sidebar" aria-expanded="true">
+  <span class="sidebar-toggle__bars" aria-hidden="true"></span>
+  <span class="sidebar-toggle__label">Menü</span>
+</button>
+
+<div class="backdrop" id="backdrop" aria-hidden="true"></div>
+
+<aside class="sidebar" id="sidebar">
+  <div class="brand">
+    <div></br></br>
+      <p class="brand__title">Karaer </br> Arsiv</p>
+      <p class="brand__sub">çok iyi site yaptim </p>
+    </div>
+  </div>
+
+  <nav class="sidebar__nav" aria-label="Bölümler">
+    <a href="#home">Ana Sayfa</a>
+    <a href="#rank">Rank</a>
+    <a href="#gallery">Fotoğraflar</a>
+    
+    <a href="#signals">Sosyal Medya</a>
+  </nav>
+
+  
+</aside>
+
+<main class="main">
+  <section class="hero section reveal" id="home">
+    <div class="hero__copy">
+      <p class="eyebrow">SAMSUN ANLIK ADALET MAHALLESİNDE KAZA</p>
+      <h1 class="glitch" data-text="SANSARSALVO55">
+        <span>SANSARSALVO55</span>
+        <span class="accent">TFT, SATRANÇ FIDE 3500 & KEL VE 5 SENEDİR OKUYOR</span>
+      </h1>
+      <p class="hero__lead">
+        <span class="hero__lead-main">Efe Karaer 22 yaşında. Bir zamanlar çok iyi tft oynardı hala çok iyi oynuyor. What a legend...</span>
+        <span class="hero__lead-contact">Reklam ve işbirliği için: <a href="mailto:efekaraer00@gmail.com">efekaraer00@gmail.com</a></span>
+      </p>
+
+      <div class="hero__chips">
+        <span>TFT GOD</span>
+       
+      </div>
+    </div>
+
+    
+  </section>
+
+  <section class="section reveal" id="rank">
+    <div class="section__head">
+      
+      <div>
+        <h2 class="section__title">TFT Ranking</h2>
+        <p class="section__desc">En iyi TFT yeteneklerini gösteren lider tablosu.</p>
+      </div>
+    </div>
+
+    <div class="rank-grid">
+      <article class="rank-card">
+        <p class="rank-card__kicker">Current rank</p>
+        <h3 class="rank-card__rank">MASTER</h3>
+        <p class="rank-card__copy"></p>
+
+        <div class="meter-list" aria-label="Odak göstergeleri">
+          <div class="meter-item"><span>Mepple Enjoyer</span><strong>31%</strong><i><b style="width:31%"></b></i></div>
+          <div class="meter-item"><span>Messi Sevgisi</span><strong>100%</strong><i><b style="width:100%"></b></i></div>
+          <div class="meter-item"><span>Siyahilik</span><strong>0%</strong><i><b style="width:0%"></b></i></div>
+          <div class="meter-item"><span>Zeitnot</span><strong>99%</strong><i><b style="width:99%"></b></i></div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="section reveal" id="gallery">
+    <div class="section__head">
+     
+      <div>
+        <h2 class="section__title">Fotoğraflar</h2>
+        <p class="section__desc">En iyi fotoğraflarım.</p>
+      </div>
+    </div>
+
+    <div class="mosaic" id="galleryGrid">
+      <button class="photo reveal-item" data-caption="Chat ekranı meme" data-full="image%20copy%2016.png" style="--span:4; --ratio: 4 / 5">
+        <img src="image%20copy%2016.png" alt="Chat ekranı meme" loading="lazy">
+        <span>Jahrein Karaer</span>
+      </button>
+      <button class="photo reveal-item" data-caption="Beyaz tişörtte yakın plan selfie" data-full="image%20copy%2014.png" style="--span:3; --ratio: 3 / 4">
+        <img src="image%20copy%2014.png" alt="Beyaz tişörtte yakın plan selfie" loading="lazy">
+        <span>Can Sungur Karaer</span>
+      </button>
+      <button class="photo reveal-item" data-caption="Filtreli portre meme" data-full="image%20copy%2013.png" style="--span:5; --ratio: 5 / 4">
+        <img src="image%20copy%2013.png" alt="Filtreli portre meme" loading="lazy">
+        <span>Kefen Karaer</span>
+      </button>
+      <button class="photo reveal-item" data-caption="Açık renk filtreli portre" data-full="image%20copy%2012.png" style="--span:3; --ratio: 4 / 5">
+        <img src="image%20copy%2012.png" alt="Açık renk filtreli portre" loading="lazy">
+        <span>ÇETULLAH</span>
+      </button>
+      <button class="photo reveal-item" data-caption="Blurred oturma odası fotoğrafı" data-full="image%20copy%2011.png" style="--span:4; --ratio: 4 / 4">
+        <img src="image%20copy%2011.png" alt="Blurred oturma odası fotoğrafı" loading="lazy">
+        <span>3LOT3RR0IST</span>
+      </button>
+      <button class="photo reveal-item" data-caption="Sarı ışıklı gece selfie" data-full="image%20copy%2010.png" style="--span:5; --ratio: 5 / 5">
+        <img src="image%20copy%2010.png" alt="Sarı ışıklı gece selfie" loading="lazy">
+        <span>3LOT3RR0IST</span>
+      </button>
+      <button class="photo reveal-item" data-caption="Kasklı gece portresi" data-full="image%20copy%209.png" style="--span:4; --ratio: 4 / 5">
+        <img src="image%20copy%209.png" alt="Kasklı gece portresi" loading="lazy">
+        <span>Çakma Mühendis Karaer</span>
+      </button>
+      <button class="photo reveal-item" data-caption="Yeşil tonlu tipografili portre" data-full="image%20copy%208.png" style="--span:4; --ratio: 4 / 5">
+        <img src="image%20copy%208.png" alt="Yeşil tonlu tipografili portre" loading="lazy">
+        <span>Anafen Karaer</span>
+      </button>
+      <button class="photo reveal-item" data-caption="Instagram yorum ekranı meme" data-full="image%20copy%207.png" style="--span:4; --ratio: 5 / 4">
+        <img src="image%20copy%207.png" alt="Instagram yorum ekranı meme" loading="lazy">
+        <span>Çakma Mühendis Karaer v2</span>
+      </button>
+      <button class="photo reveal-item" data-caption="Sahte haber görseli meme" data-full="image%20copy%204.png" style="--span:4; --ratio: 5 / 4">
+        <img src="image%20copy%204.png" alt="Sahte haber görseli meme" loading="lazy">
+        <span>Çeçen Karaer</span>
+      </button>
+      <button class="photo reveal-item" data-caption="Blurred iki kişi oturma fotoğrafı" data-full="image%20copy%205.png" style="--span:5; --ratio: 5 / 4">
+        <img src="image%20copy%205.png" alt="Blurred iki kişi oturma fotoğrafı" loading="lazy">
+        <span>Mohikan Karaer</span>
+      </button>
+      <button class="photo reveal-item" data-caption="Mavi tonlu oyun karakteri fotoğrafı" data-full="image%20copy%2018.png" style="--span:3; --ratio: 3 / 4">
+        <img src="image%20copy%2018.png" alt="Mavi tonlu oyun karakteri fotoğrafı" loading="lazy">
+        <span>Yakup TV Karaer</span>
+      </button>
+      <button class="photo reveal-item" data-caption="Poster fotoğrafı elde tutulan portre" data-full="image%20copy%2020.png" style="--span:4; --ratio: 4 / 5">
+        <img src="image%20copy%2020.png" alt="Poster fotoğrafı elde tutulan portre" loading="lazy">
+        <span>Babaanne Karaer</span>
+      </button>
+      <button class="photo reveal-item" data-caption="Blurlu iç mekan fotoğrafı" data-full="image%20copy%2021.png" style="--span:5; --ratio: 5 / 4">
+        <img src="image%20copy%2021.png" alt="Blurlu iç mekan fotoğrafı" loading="lazy">
+        <span>Akide Sugar Karaer</span>
+      </button>
+      <button class="photo reveal-item" data-caption="Ofis ekranları önünde çalışma fotoğrafı" data-full="image%20copy%2015.png" style="--span:4; --ratio: 4 / 5">
+        <img src="image%20copy%2015.png" alt="Ofis ekranları önünde çalışma fotoğrafı" loading="lazy">
+        <span>Nevada Karaer</span>
+      </button>
+      <button class="photo reveal-item" data-caption="Dışarıda sert poz meme" data-full="image%20copy%2017.png" style="--span:4; --ratio: 4 / 5">
+        <img src="image%20copy%2017.png" alt="Dışarıda sert poz meme" loading="lazy">
+        <span>İtici Karaer</span>
+      </button>
+      <button class="photo reveal-item" data-caption="Karanlık portre meme" data-full="image%20copy%206.png" style="--span:4; --ratio: 4 / 5">
+        <img src="image%20copy%206.png" alt="Karanlık portre meme" loading="lazy">
+        <span>hmm nt happen</span>
+      </button>
+    </div>
+  </section>
+
+  
+
+  <section class="section reveal" id="signals">
+    <div class="section__head">
+    
+      <div>
+        <h2 class="section__title">Sosyal Medyalarım</h2>
+        <p class="section__desc">En iyi sosyal medya içeriklerini bulabileceğin yer.</p>
+      </div>
+    </div>
+
+    <div class="signal-grid">
+      <a class="signal-card reveal-item" href="https://op.gg/lol/summoners/tr/SANSARSALVO55-DEL%C4%B0" target="_blank" rel="noopener">
+        <span class="signal-card__head">
+          <svg class="signal-card__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M14.5 5.5h4l-5.3 13H9.2L14.5 5.5ZM8.2 5.5h2.2l-4.6 13H3.5l4.7-13Z" fill="currentColor"/>
+          </svg>
+          <span>OP.GG</span>
+        </span>
+        <strong>LoL Rank</strong>
+      </a>
+      <a class="signal-card reveal-item" href="https://www.metatft.com/player/tr/SANSARSALVO55-DEL%C4%B0" target="_blank" rel="noopener">
+        <span class="signal-card__head">
+          <svg class="signal-card__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M12 2 3.5 7v10L12 22l8.5-5V7L12 2Zm0 2.4 6.3 3.7L12 11.8 5.7 8.1 12 4.4ZM5.5 9.7 11 13v6.8L5.5 16V9.7Zm13 6.3L13 19.8V13l5.5-3.3V16Z" fill="currentColor"/>
+          </svg>
+          <span>MetaTFT</span>
+        </span>
+        <strong>TFT Rank</strong>
+      </a>
+      <a class="signal-card reveal-item" href="https://open.spotify.com/user/11145638018?si=6Cn7l12bRzivJ0KYelxjyQ" target="_blank" rel="noopener">
+        <span class="signal-card__head">
+          <svg class="signal-card__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M12 2.25a9.75 9.75 0 1 0 0 19.5 9.75 9.75 0 0 0 0-19.5Zm4.45 14.08a.9.9 0 0 1-1.24.3c-2.53-1.55-5.7-1.9-9.42-1.04a.9.9 0 1 1-.4-1.75c4.08-.94 7.58-.54 10.43 1.22.42.26.56.8.3 1.24Zm1.31-2.92a1.1 1.1 0 0 1-1.51.37c-2.97-1.83-7.5-2.36-10.99-1.3a1.1 1.1 0 1 1-.62-2.11c4.02-1.18 9.03-.59 12.49 1.54.5.31.66.96.38 1.5Zm.12-3.07C14.6 8.28 8.7 8.07 5.47 9.05a1.3 1.3 0 1 1-.74-2.5c3.72-1.1 10.14-.86 14.1 1.5a1.3 1.3 0 0 1-1.03 2.39Z" fill="currentColor"/>
+          </svg>
+          <span>Spotify</span>
+        </span>
+        <strong>Spotify Profile</strong>
+      </a>
+      <a class="signal-card reveal-item" href="https://www.linkedin.com/in/efekaraer" target="_blank" rel="noopener">
+        <span class="signal-card__head">
+          <svg class="signal-card__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M6.5 8.5H3.9V20h2.6V8.5ZM5.2 3.2a1.55 1.55 0 1 0 0 3.1 1.55 1.55 0 0 0 0-3.1ZM20.1 20h-2.6v-5.7c0-1.36-.03-3.1-1.9-3.1s-2.19 1.48-2.19 3V20h-2.6V8.5h2.5v1.57h.04c.35-.67 1.2-1.38 2.47-1.38 2.64 0 3.13 1.74 3.13 4V20Z" fill="currentColor"/>
+          </svg>
+          <span>LinkedIn</span>
+        </span>
+        <strong>1500 takipçim var</strong>
+      </a>
+      <a class="signal-card reveal-item" href="http://efekaraer.com" target="_blank" rel="noopener">
+        <span class="signal-card__head">
+          <svg class="signal-card__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M12 3a9 9 0 0 0 0 18 11.3 11.3 0 0 0 2.9-4.8h-5.8A11.3 11.3 0 0 0 12 21a9 9 0 1 0 0-18Zm-5.7 7.4h3.1a17.4 17.4 0 0 1 0 3.2H6.3a7 7 0 0 1 0-3.2Zm.7-1.8a7 7 0 0 1 1.7-2.3c-.3.7-.5 1.5-.6 2.3H7Zm7 0a11.7 11.7 0 0 0-.6-2.3 7 7 0 0 1 1.7 2.3h-1.1Zm1.5 1.8h3.1a7 7 0 0 1 0 3.2h-3.1a17.4 17.4 0 0 0 0-3.2Zm3-1.8h-2.1a7 7 0 0 0-1.7-2.3 7 7 0 0 1 3.8 2.3ZM8.9 5.8A7 7 0 0 0 7.2 8.1H5.1a7 7 0 0 1 3.8-2.3Zm-3.8 9.4h2.1a7 7 0 0 0 1.7 2.3 7 7 0 0 1-3.8-2.3Zm7.2 2.3a7 7 0 0 0 1.7-2.3h2.1a7 7 0 0 1-3.8 2.3Z" fill="currentColor"/>
+          </svg>
+          <span>Main node</span>
+        </span>
+        <strong>efekaraer.com</strong>
+      </a>
+      <a class="signal-card reveal-item" href="mailto:efekaraer00@gmail.com">
+        <span class="signal-card__head">
+          <svg class="signal-card__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M4.2 6.5h15.6A1.2 1.2 0 0 1 21 7.7v8.6a1.2 1.2 0 0 1-1.2 1.2H4.2A1.2 1.2 0 0 1 3 16.3V7.7a1.2 1.2 0 0 1 1.2-1.2Zm.8 1.7v.2l7 4.6 7-4.6v-.2H5Zm14.8 8.4V10l-6.2 4.1a1.2 1.2 0 0 1-1.3 0L5.8 10v6.6h14Z" fill="currentColor"/>
+          </svg>
+          <span>Mail</span>
+        </span>
+        <strong>efekaraer00@gmail.com</strong>
+      </a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p class="footer__mark">SANSARSALVO55 // EFEKARAER</p>
+    <p class="footer__meta">what a legend.</p>
+  </footer>
+</main>
+
+<div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-modal="true">
+  <div class="lightbox__frame">
+    <button class="lightbox__close" id="lightboxClose" aria-label="Kapat">✕</button>
+    <img id="lightboxImg" src="" alt="">
+    <p class="lightbox__caption" id="lightboxCaption"></p>
+  </div>
+</div>
+
+<script>
+(function(){
+  'use strict';
+
+  var body = document.body;
+  var sidebarToggle = document.getElementById('sidebarToggle');
+  var backdrop = document.getElementById('backdrop');
+  var sidebarLinks = document.querySelectorAll('.sidebar__nav a');
+
+  function setSidebar(open){
+    body.classList.toggle('is-sidebar-open', open);
+    sidebarToggle.setAttribute('aria-expanded', String(open));
+    backdrop.setAttribute('aria-hidden', String(!open));
+  }
+
+  sidebarToggle.addEventListener('click', function(){
+    setSidebar(!body.classList.contains('is-sidebar-open'));
+  });
+
+  backdrop.addEventListener('click', function(){
+    setSidebar(false);
+  });
+
+  sidebarLinks.forEach(function(link){
+    link.addEventListener('click', function(){
+      if (window.matchMedia('(max-width: 960px)').matches) {
+        setSidebar(false);
+      }
+    });
+  });
+
+  var revealItems = document.querySelectorAll('.reveal, .reveal-item');
+  var observer = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.18 });
+
+  revealItems.forEach(function(item){ observer.observe(item); });
+
+  var photos = document.querySelectorAll('.photo');
+  var lightbox = document.getElementById('lightbox');
+  var lightboxImg = document.getElementById('lightboxImg');
+  var lightboxCaption = document.getElementById('lightboxCaption');
+  var lightboxClose = document.getElementById('lightboxClose');
+  var lastFocused = null;
+
+  function openLightbox(photo){
+    var full = photo.getAttribute('data-full');
+    var caption = photo.getAttribute('data-caption');
+    lastFocused = document.activeElement;
+    lightboxImg.src = full;
+    lightboxImg.alt = caption;
+    lightboxCaption.textContent = caption;
+    lightbox.classList.add('is-open');
+    lightbox.setAttribute('aria-hidden', 'false');
+    document.documentElement.style.overflow = 'hidden';
+    lightboxClose.focus();
+  }
+
+  function closeLightbox(){
+    lightbox.classList.remove('is-open');
+    lightbox.setAttribute('aria-hidden', 'true');
+    document.documentElement.style.overflow = '';
+    if (lastFocused) lastFocused.focus();
+  }
+
+  photos.forEach(function(photo){
+    photo.addEventListener('click', function(){ openLightbox(photo); });
+  });
+
+  lightboxClose.addEventListener('click', closeLightbox);
+  lightbox.addEventListener('click', function(event){
+    if (event.target === lightbox) closeLightbox();
+  });
+
+  document.addEventListener('keydown', function(event){
+    if (event.key === 'Escape') {
+      if (lightbox.classList.contains('is-open')) closeLightbox();
+      else if (body.classList.contains('is-sidebar-open') && window.matchMedia('(max-width: 960px)').matches) setSidebar(false);
+    }
+  });
+
+  if (window.matchMedia('(max-width: 960px)').matches) {
+    setSidebar(false);
+  }
+})();
+</script>
+
+</body>
+</html>

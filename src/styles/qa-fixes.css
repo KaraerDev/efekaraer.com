@@ -1,0 +1,17 @@
+/* Corrections observed in Chromium QA; preserve the approved palette/layout. */
+.text-link sup,
+.exhibit-caption .mono,
+.page-heading h1 > sup,
+.lightbox-bottom .mono,
+.rank-heading > .eyebrow,
+.listening-note > .mono { color: #a82d1b; }
+.approval-seal { color: #141412; }
+.hero-photo img { object-position: 50% 80%; }
+.footer-bottom > a,
+.footer-bottom > button { min-height: 44px; display: inline-flex; align-items: center; }
+.text-link { min-height: 44px; }
+@media (max-width: 760px) {
+  .exhibit-featured:first-child .exhibit-image img { object-position: center 80%; }
+  .exhibit-featured:nth-child(2) .exhibit-image img { object-position: center 75%; }
+  .lightbox-stage { grid-template-columns: 44px 1fr 44px; }
+}

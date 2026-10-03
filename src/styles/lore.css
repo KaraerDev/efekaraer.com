@@ -1,0 +1,58 @@
+/* Marginal notes and records use the existing paper, rules and type system. */
+.margin-note { margin-top: 18px; font-size: 11px; }
+.margin-note summary { width: fit-content; padding: 12px 0; cursor: pointer; text-decoration: underline; text-underline-offset: 4px; }
+.intro-text .margin-note p { font-size: 12px; line-height: 1.8; margin-top: 8px; color: var(--muted); }
+.game-records { padding-top: 70px; }
+.megabonk-record { display: grid; grid-template-columns: .8fr 1.2fr; align-items: start; gap: 60px; padding: 36px 0; }
+.megabonk-record .mono { font-size: 9px; }
+.megabonk-record h2 { font: 800 clamp(100px, 11vw, 150px)/1 var(--display); letter-spacing: -.025em; color: var(--red); margin: 12px 0; }
+.megabonk-record h2 > span { font-size: .4em; vertical-align: top; line-height: 1.5; }
+.megabonk-record p { font-size: 12px; color: var(--muted); }
+.evidence { margin-top: 3px; border-block: 1px solid var(--line); }
+.evidence summary { display: flex; justify-content: space-between; cursor: pointer; padding: 20px 0; font-size: 13px; }
+.evidence summary span { font-size: 21px; }
+.evidence[open] summary span { transform: rotate(90deg); }
+.evidence img { width: 100%; height: auto; }
+.evidence figcaption { padding: 13px 0 18px; color: var(--muted); }
+.game-ledger { margin: 0; }
+.game-ledger > div { display: grid; grid-template-columns: .8fr 1.2fr; gap: 60px; padding: 20px 0; border-top: 1px solid var(--line); }
+.game-ledger dt { font-size: 14px; font-weight: 500; }
+.game-ledger dd { margin: 0; font-size: 14px; line-height: 1.7; }
+.game-ledger dd strong { font-weight: 500; }
+.game-ledger dd span { display: block; color: var(--muted); font-size: 11px; }
+.listening-note { margin: -4px 0 28px; padding: 15px 0 0 calc(100% / 3.4); }
+.listening-note > .mono { font-size: 8px; color: var(--red); }
+.listening-content { display: flex; gap: 45px; align-items: center; padding: 12px 0 18px; }
+.listening-count strong { display: block; font: 800 80px/.95 var(--display); letter-spacing: -.03em; }
+.listening-count > span { display: block; font-size: 9px; color: var(--muted); line-height: 1.6; margin-top: 12px; }
+.listening-content dl { margin: 0; }
+.listening-content dl > div + div { margin-top: 12px; }
+.listening-content dt { font: 8px/1.6 var(--mono); color: var(--muted); }
+.listening-content dd { font-size: 13px; margin: 0; }
+.listening-footnote { font-size: 8px; color: var(--muted); }
+
+/* A user-opened, static interruption. No flashing, audio or automatic takeover. */
+.incident { width: calc(100vw - 32px); max-width: 1500px; max-height: calc(100dvh - 32px); border: 0; padding: 0; background: #151514; color: var(--paper); overflow: auto; }
+.incident::backdrop { background: rgb(0 0 0 / .93); }
+.incident-bar { display: flex; align-items: center; justify-content: space-between; padding: 8px 18px; gap: 16px; }
+.incident-bar h2 { font-size: 10px; font-weight: 400; }
+.incident-bar button { padding: 10px 12px; font: 12px/1.5 var(--mono); min-height: 44px; }
+.incident-bar button:hover { color: var(--orange); }
+.incident-bar button span { margin-left: 12px; font-size: 22px; vertical-align: middle; }
+.incident img { width: 100%; height: min(72dvh, 800px); object-fit: cover; object-position: 47% 50%; }
+.incident-caption { padding: 10px 18px; font-size: 10px; }
+@media (max-width: 760px) {
+  .game-records { padding-top: 45px; }
+  .megabonk-record { grid-template-columns: 1fr; gap: 24px; padding: 28px 0; }
+  .megabonk-record h2 { font-size: 112px; }
+  .game-ledger > div { grid-template-columns: 1fr; gap: 7px; }
+  .game-ledger dt { font-size: 13px; }
+  .game-ledger dd { font-size: 13px; }
+  .listening-note { padding-left: 0; margin-bottom: 24px; }
+  .listening-content { gap: 30px; }
+  .listening-count strong { font-size: 75px; }
+  .incident { width: calc(100vw - 20px); max-height: calc(100dvh - 20px); }
+  .incident-bar { padding-inline: 10px; }
+  .incident img { height: 66dvh; }
+}
+@media print { .incident { display: none !important; } }

@@ -1,0 +1,16 @@
+---
+import Photo from './Photo.astro';
+import type { Exhibit } from '../data/content';
+interface Props { exhibit: Exhibit; featured?: boolean }
+const { exhibit, featured = false } = Astro.props;
+---
+<article class:list={['exhibit', { 'exhibit-featured': featured }]} data-category={exhibit.category} data-search={`${exhibit.title} ${exhibit.category}`.toLocaleLowerCase('tr')}>
+  <button class="exhibit-open" data-exhibit={exhibit.id} aria-label={`${exhibit.title} fotoğrafını büyüt`}>
+    <div class="exhibit-image">
+      <Photo name={exhibit.image} alt={exhibit.alt} sizes="(max-width: 600px) 90vw, (max-width: 1000px) 45vw, 30vw" />
+      <span class="exhibit-zoom" aria-hidden="true">↗</span>
+      <span class="exhibit-category mono">{exhibit.category}</span>
+    </div>
+    <div class="exhibit-caption"><span class="mono">{String(exhibit.id).padStart(3, '0')}</span><h3>{exhibit.title}</h3><span aria-hidden="true">↗</span></div>
+  </button>
+</article>

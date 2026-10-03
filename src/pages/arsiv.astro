@@ -1,0 +1,9 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ExhibitCard from '../components/ExhibitCard.astro';
+import { exhibits } from '../data/content';
+---
+<Layout title="Arşiv — Efe Karaer" section="archive" description={`Efe Karaer arşivi. ${exhibits.length} fotoğraf ve meme.`}>
+  <section class="page-heading shell"><div class="section-label mono"><span>KOLEKSİYON / 001—{String(exhibits.length).padStart(3, '0')}</span><span>FOTOĞRAF / MEME</span></div><h1>KARAER<br /><span>ARŞİVİ.</span><sup>{exhibits.length}</sup></h1><div class="page-heading-bottom"><p>Koleksiyon.<br /><span class="muted">Başlıklar orijinal.</span></p><button class="button button-dark" id="random-exhibit">Rastgele kayıt <span>↗</span></button></div></section>
+  <section class="archive-section shell" aria-label="Fotoğraf koleksiyonu"><div class="archive-toolbar"><div class="filter-buttons" role="group" aria-label="Fotoğrafları kategoriye göre filtrele">{['Hepsi', 'Portre', 'Meme', 'Paralel evren'].map((filter, i) => <button data-filter={filter} aria-pressed={i === 0}>{filter}{i === 0 && <sup>{exhibits.length}</sup>}</button>)}</div><label class="search-label"><span class="sr-only">Arşivde ara</span><input type="search" id="archive-search" placeholder="Arşivde ara" autocomplete="off" /><span aria-hidden="true">⌕</span></label></div><div class="archive-status mono"><span id="archive-count" aria-live="polite">{exhibits.length} ESER GÖSTERİLİYOR</span><span>KARAER ARŞİVİ</span></div><div class="archive-grid">{exhibits.map(exhibit => <ExhibitCard exhibit={exhibit} />)}</div><div id="archive-empty" hidden><h2>Kayıt yok.</h2><p>Aramayla eşleşen kayıt bulunamadı.</p><button id="reset-search" class="text-link">Hepsini göster ↗</button></div><div class="archive-end"><span class="end-star" aria-hidden="true">✳</span><p>Son kayıt.</p><span class="mono">KOLEKSİYON SONU</span></div></section>
+</Layout>

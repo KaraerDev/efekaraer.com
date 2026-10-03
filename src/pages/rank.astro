@@ -1,0 +1,23 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { links, stats } from '../data/content';
+import Photo from '../components/Photo.astro';
+---
+<Layout title="Oyuncu dosyası — Efe Karaer" section="rank" description="SANSARSALVO55 oyuncu dosyası. Arşivdeki Master rütbesi, TFT ve LoL profilleri, şaka göstergeleri.">
+  <section class="page-heading shell rank-heading"><div class="section-label mono"><span>OYUNCU DOSYASI / TR—55</span><span>TEAMFIGHT TACTICS</span></div><p class="eyebrow">SANSARSALVO55</p><h1>TFT GOD.<br /><span>KAYITTA.</span></h1><p class="rank-quote">“Bir zamanlar çok iyi TFT oynardı,<br />hâlâ çok iyi oynuyor.” <span class="mono">KARAER ARŞİVİ</span></p></section>
+  <section class="rank-dossier shell"><div class="rank-main-panel"><div class="mono dossier-label"><span>ARŞİVDEKİ RÜTBE</span><span>01 / TFT</span></div><div class="master-display"><span class="rank-symbol" aria-hidden="true">✳</span><h2>MASTER</h2><span class="mono">SANSARSALVO55 / TR</span></div><p>Birkaç sette bir Master. Sonra ara.<br />İlk 100 geçmişi var.</p><a class="button button-dark" href={links[0].url} target="_blank" rel="noopener noreferrer">MetaTFT’de güncel rank <span>↗</span></a><span class="rank-disclaimer mono">ARŞİV KAYDI · CANLI VERİ DEĞİLDİR.</span></div><div class="stats-panel"><div class="mono dossier-label"><span>GÖSTERGELER</span><span>EK / 001</span></div><h2>Değerler.<br /><em>Olduğu gibi.</em></h2>{stats.map(stat => <div class="stat-row"><div><h3>{stat.label}</h3><span>{stat.value}<small>%</small></span></div><meter min="0" max="100" value={stat.value} aria-label={stat.label}>{stat.value}%</meter><p>{stat.annotation}</p></div>)}<p class="stats-note mono">ŞAKA GÖSTERGELERİ.</p></div></section>
+  <section class="game-records shell" aria-label="Diğer oyun kayıtları">
+    <div class="section-label mono"><span>02 / DİĞER KAYITLAR</span><span>OYUNCU DOSYASI EKİ</span></div>
+    <div class="megabonk-record">
+      <div><span class="mono">MEGABONK / LİDERLİK TABLOSU</span><h2><span>#</span>237</h2><p>Geçmiş sıralama kaydı.</p></div>
+      <details class="evidence"><summary>Görüntü kaydı <span aria-hidden="true">↗</span></summary><figure><a href="/images/megabonk-237-960.webp" target="_blank" rel="noopener noreferrer" aria-label="MegaBonk sıralama görüntüsünü yeni sekmede aç"><Photo name="megabonk-237" alt="MegaBonk liderlik tablosunda 237. sırayı gösteren ekran görüntüsü" sizes="(max-width: 760px) 90vw, 55vw" /></a><figcaption class="mono">#237 / KAYITLI GÖRÜNTÜ · CANLI SIRALAMA DEĞİL.</figcaption></figure></details>
+    </div>
+    <dl class="game-ledger">
+      <div><dt>Age of Empires II: DE</dt><dd><strong>Khmer.</strong> Filler + akrepler.<span>Arkadaş lobisi. Genelde galibiyet.</span></dd></div>
+      <div><dt>Stardew Valley</dt><dd>Steam’de ilk tercih.</dd></div>
+      <div><dt>Factorio</dt><dd>Çok iyi oyun.<span>Bir ara oturulacak.</span></dd></div>
+    </dl>
+  </section>
+  <section class="claim-section shell"><div class="section-label mono"><span>EK / NOTLAR</span><span>ARŞİV EKİ</span></div><div class="claim-grid"><div><span class="mono">SATRANÇ DOSYASI</span><h2>FIDE<br /><span>3500.</span><sup>*</sup></h2><p>* Şaka. Gerçek bir FIDE derecesi değil.</p></div><div class="excuse-machine"><p class="mono">MAÇ SONU BASIN TOPLANTISI</p><h3>Maç sonu.<br />Kısa açıklama.</h3><blockquote id="excuse" aria-live="polite">“Olur öyle.”</blockquote><button class="button button-dark" id="excuse-button">Başka açıklama <span>↻</span></button><span class="mono">ŞAKA METİNLERİ · CANLI MAÇ VERİSİ YOK.</span></div></div></section>
+  <div class="profile-exit shell"><p>League of Legends.</p><a href={links[1].url} class="text-link" target="_blank" rel="noopener noreferrer">OP.GG profili ↗</a></div>
+</Layout>

@@ -1,0 +1,30 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Photo from '../components/Photo.astro';
+import ExhibitCard from '../components/ExhibitCard.astro';
+import { exhibits, links } from '../data/content';
+const featured = [exhibits[6], exhibits[10], exhibits[16]];
+---
+<Layout>
+  <section class="hero shell">
+    <div class="hero-index mono"><span>EFE KARAER / ANA KAYIT</span><span>CİLT 01 — KARAER ARŞİVİ</span></div>
+    <div class="hero-grid">
+      <div class="hero-copy"><p class="eyebrow"><span class="status-dot"></span> KİŞİSEL MESELE.</p><h1>EFE<br /><span>KARAER</span><sup>®</sup></h1><div class="hero-intro"><span class="hero-asterisk" aria-hidden="true">✳</span><p>SANSARSALVO55.<br />TFT.<br /><span class="muted">What a legend.</span></p></div><a href="/arsiv/" class="button button-dark">Arşivi aç <span aria-hidden="true">↗</span></a></div>
+      <div class="hero-art"><span class="handwritten">çok iyi site yaptım.</span><button class="hero-photo" data-exhibit="7" aria-label="Çakma Mühendis Karaer portresini aç"><Photo name="karaer-9" alt="Baret takan Efe’nin siyah beyaz portresi" eager sizes="(max-width: 760px) 85vw, 42vw" /><span class="hero-photo-index mono">EK / 007<br />ORİJİNAL KOPYA</span><span class="hero-photo-expand" aria-hidden="true">↗</span></button><button class="approval-seal" id="seal" aria-label="Efe onay mührünü bas"><span>EFE KARAER</span><strong>EK</strong><span>ONAYLI ✓</span></button><div class="hero-caption mono"><span>ŞEKİL 01. ÇAKMA MÜHENDİS KARAER</span><span>ARŞİV / 007</span></div></div>
+    </div>
+    <div class="hero-bottom mono"><span>SANSARSALVO55 / TR</span><span>İYİ Mİ ÇOK MU FAÇA?</span><a href="#dosya">DOSYAYI AÇ ↓</a></div>
+  </section>
+  <div class="ticker" aria-label="TFT God. What a legend. SANSARSALVO55."><div aria-hidden="true"><span>TFT GOD</span>✳<span>WHAT A LEGEND.</span>✳<span>SANSARSALVO55</span>✳<span>TFT GOD</span>✳<span>WHAT A LEGEND.</span>✳<span>SANSARSALVO55</span>✳</div><button id="ticker-toggle" aria-label="Yazı akışını durdur" aria-pressed="false">Ⅱ</button></div>
+  <section class="intro-section shell" id="dosya">
+    <div class="section-label mono"><span>01 / DOSYA</span><span>EFE KARAER</span></div>
+    <div class="intro-grid"><h2>İyi mi,<br /><em>çok mu faça?</em></h2><div class="intro-text"><p>Çok.</p><p>Kahve: çift shot. Taze öğütüm.<br />Günlük adet: belirsiz.</p><details class="margin-note"><summary>Hazırlık notu</summary><p>Öğütüm taze. Sepet temiz. Tamp düzgün.<br />Referans: Sam Çeviköz — Sam Amca.</p></details><span class="signature">Efe Karaer</span><span class="mono intro-footnote">EK / KİŞİSEL ARŞİV</span></div></div>
+  </section>
+  <section class="featured-section shell">
+    <div class="section-label mono"><span>02 / KALICI KOLEKSİYON</span><span>SEÇİLMİŞ ESERLER</span></div>
+    <div class="section-heading"><h2>Seçili<br /><span>kayıtlar.</span></h2><a href="/arsiv/" class="text-link">Arşivin tamamı <sup>{exhibits.length}</sup> ↗</a></div>
+    <div class="featured-grid">{featured.map((exhibit) => <ExhibitCard exhibit={exhibit} featured />)}</div>
+    <p class="collection-note mono">BAŞLIKLAR OLDUĞU GİBİ.</p>
+  </section>
+  <section class="rank-teaser"><div class="shell rank-teaser-grid"><div><p class="eyebrow">03 / OYUNCU DOSYASI</p><h2>TFT.<br /><span>KAYIT ALTINDA.</span><em>devam.</em></h2><a class="button button-paper" href="/rank/">Oyuncu dosyasını aç <span>↗</span></a></div><div class="rank-ticket"><div class="mono ticket-top">TEAMFIGHT TACTICS <span>TR / 55</span></div><div class="rank-symbol" aria-hidden="true">✳</div><span class="mono">ARŞİVE GEÇEN RÜTBE</span><strong>MASTER</strong><div class="ticket-divider"></div><p>SANSARSALVO55<span class="mono">“WHAT A LEGEND...”</span></p><span class="ticket-note mono">GÜNCEL RANK / METATFT ↗</span></div></div></section>
+  <section class="elsewhere shell"><div><p class="eyebrow">04 / BAĞLANTILAR</p><h2>Diğer<br />adresler.</h2></div><div class="quick-links">{links.slice(0, 4).map(link => <a href={link.url} target="_blank" rel="noopener noreferrer"><span>{link.name}</span><span aria-label="Yeni sekmede açılır">↗</span></a>)}<a href="/baglantilar/" class="all-links mono">BÜTÜN BAĞLANTILAR <span>→</span></a></div></section>
+</Layout>

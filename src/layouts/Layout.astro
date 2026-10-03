@@ -1,0 +1,51 @@
+---
+import '@fontsource/barlow-condensed/800.css';
+import '@fontsource/dm-sans/400.css';
+import '@fontsource/dm-sans/500.css';
+import '@fontsource/dm-sans/700.css';
+import '@fontsource/ibm-plex-mono/400.css';
+import '../styles/global.css';
+import '../styles/lore.css';
+import '../styles/qa-fixes.css';
+import Lightbox from '../components/Lightbox.astro';
+import Incident from '../components/Incident.astro';
+import { exhibits } from '../data/content';
+interface Props { title?: string; description?: string; section?: string }
+const { title = 'Efe Karaer — İyi mi çok mu faça?', description = 'Efe Karaer — Kişisel Mesele. SANSARSALVO55, TFT, fotoğraflar ve arşiv.', section = 'cover' } = Astro.props;
+const nav = [{ href: '/', label: 'Kapak', id: 'cover' }, { href: '/arsiv/', label: 'Arşiv', id: 'archive' }, { href: '/rank/', label: 'Rank', id: 'rank' }, { href: '/baglantilar/', label: 'Bağlantılar', id: 'links' }];
+const canonicalPath = section === '404' ? '/404.html' : `${Astro.url.pathname.replace(/\/$/, '')}/`;
+const canonical = new URL(canonicalPath, Astro.site);
+---
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#eeeae1" /><meta name="description" content={description} />
+    {section === '404' && <meta name="robots" content="noindex" />}
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="canonical" href={canonical} />
+    <meta property="og:type" content="website" /><meta property="og:locale" content="tr_TR" />
+    <meta property="og:title" content={title} /><meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={new URL('/social-card.png', Astro.site)} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <title>{title}</title>
+  </head>
+  <body data-section={section}>
+    <a class="skip-link" href="#main">İçeriğe geç</a>
+    <header class="site-header shell">
+      <a href="/" class="wordmark" aria-label="Efe Karaer, ana sayfa">EK<span class="brand-star" aria-hidden="true">✳</span><span class="brand-caption mono">EFE KARAER<br />KİŞİSEL MESELE.</span></a>
+      <nav aria-label="Ana menü">{nav.map((item, index) => <a href={item.href} aria-current={section === item.id ? 'page' : undefined}><sup>0{index + 1}</sup>{item.label}{item.id === 'archive' && <span class="nav-count">{exhibits.length}</span>}</a>)}</nav>
+      <span class="header-edition mono">BAĞIMSIZ YAYIN<br />TEK KİŞİLİK KADRO</span>
+    </header>
+    <main id="main"><slot /></main>
+    <footer class="site-footer shell">
+      <div class="footer-top"><p>Efe Karaer.<br /><em>Kişisel Mesele.</em></p><a href="mailto:efekaraer00@gmail.com" class="footer-contact">Reklam & işbirliği <span>efekaraer00@gmail.com ↗</span></a></div>
+      <div class="footer-bottom mono"><a href="/">© EFE KARAER <span>— KİŞİSEL ARŞİV</span></a><button id="footer-secret" aria-label="Ek kaydı aç" aria-haspopup="dialog" aria-controls="incident">EK NOT ↗</button><a href="#main">YUKARI ↑</a></div>
+    </footer>
+    <Lightbox />
+    <Incident />
+    <div class="toast mono" id="toast" role="status" aria-live="polite"></div>
+    <script src="../scripts/site.ts"></script>
+  </body>
+</html>

@@ -1,0 +1,9 @@
+docs/
+memory-bank/
+tools/
+tests/
+test-results/
+AGENTS.md
+playwright-report/
+playwright.config.ts
+.env*

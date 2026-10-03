@@ -1,0 +1,9 @@
+---
+import metadata from '../data/image-metadata.json';
+interface Props { name: string; alt: string; eager?: boolean; sizes?: string; class?: string }
+const { name, alt, eager = false, sizes = '(max-width: 600px) 90vw, 45vw', class: className } = Astro.props;
+const info = metadata[name as keyof typeof metadata];
+const smallWidth = Math.min(480, info?.width ?? 480);
+const largeWidth = Math.min(960, info?.width ?? 960);
+---
+<img class={className} src={`/images/${name}-960.webp`} srcset={smallWidth !== largeWidth ? `/images/${name}-480.webp ${smallWidth}w, /images/${name}-960.webp ${largeWidth}w` : undefined} sizes={sizes} alt={alt} width={info?.width} height={info?.height} loading={eager ? 'eager' : 'lazy'} fetchpriority={eager ? 'high' : 'auto'} decoding="async" />

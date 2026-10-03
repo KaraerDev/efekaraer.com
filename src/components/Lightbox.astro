@@ -1,0 +1,9 @@
+---
+import { exhibits } from '../data/content';
+---
+<dialog class="lightbox" id="lightbox" aria-labelledby="lightbox-title">
+  <div class="lightbox-top mono"><span id="lightbox-counter"></span><button data-close aria-label="Fotoğrafı kapat">KAPAT <span aria-hidden="true">×</span></button></div>
+  <div class="lightbox-stage"><button class="photo-prev" aria-label="Önceki fotoğraf">←</button><img id="lightbox-image" alt="" width="960" height="960" /><button class="photo-next" aria-label="Sonraki fotoğraf">→</button></div>
+  <div class="lightbox-bottom"><div><span class="mono" id="lightbox-category"></span><h2 id="lightbox-title"></h2><p id="lightbox-note"></p></div><button class="text-link" id="exhibit-copy">Eser bağlantısını kopyala ↗</button></div>
+</dialog>
+<script is:inline type="application/json" id="exhibit-data" set:html={JSON.stringify(exhibits)} />
