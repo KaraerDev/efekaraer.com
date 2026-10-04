@@ -1,6 +1,6 @@
 # Efe Karaer — Kişisel Mesele
 
-A Turkish, deliberately overproduced personal archive for **Efe Karaer**, built from the original public site. Production domain: https://efekaraer.com. Repository: https://github.com/dinosorus/efekaraer.com. This project is about Efe, never the developer. No deployment has been performed.
+A Turkish, deliberately overproduced personal archive for **Efe Karaer**, built from the original public site. Production domain: https://efekaraer.com. Repository: https://github.com/KaraerDev/efekaraer.com. This project is about Efe, never the developer. No deployment has been performed.
 
 The approved concept is an unnecessarily official collector’s edition of one person: warm paper, ink, vermilion, giant condensed type, numbered exhibits, and an approval seal. Copy is detached, terse and assured. Efe does not introduce himself, seek approval or explain the joke. The production does the work. See `memory-bank/voiceAndCopy.md` for the authoritative writing rules.
 
