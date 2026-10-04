@@ -9,7 +9,7 @@ This final enrichment/QA record supersedes the earlier browser-unavailable statu
 - npm run build: static output, five pages: /, /arsiv/, /rank/, /baglantilar/, /404.html.
 - npm test: 14 passing production-bundle/JSDOM tests. The original 12 were retained unchanged; two cover the opt-in incident and supplied records/authentic wording/no migration copy.
 - npm run test:browser: **20/20 passing**, four viewport projects, final run 35.6 seconds, exit code 0. Tests and outputs described below. No application tests were weakened or removed.
-- All 17 original captions and five external/contact destinations still match the original source HTML exactly. Self-link routes locally. Images have alt text and dimensions; all generated local links/assets resolve. Each route has one h1/main, Turkish language, distinct title/description and canonical URL.
+- All 15 retained captions and five external/contact destinations match the edited local source HTML snapshot. Self-link routes locally. Images have alt text and dimensions; all generated local links/assets resolve. Each route has one h1/main, Turkish language, distinct title/description and canonical URL.
 
 ## Actual browser QA
 
@@ -33,7 +33,7 @@ Screenshots/traces in test-results/browser and HTML report in playwright-report 
 
 ## Static Vercel readiness
 
-Production domain: https://efekaraer.com. Canonical repository: https://github.com/dinosorus/efekaraer.com. Install npm ci; build npm run build; output dist; Node 22.12+ (Node 22 runtime is used locally). No adapter, backend, functions, database, CMS, authentication, secrets or remote runtime service. Local fonts/images and the incident asset need no connection to the production domain.
+Production domain: https://efekaraer.com. Canonical repository: https://github.com/KaraerDev/efekaraer.com. Install npm ci; build npm run build; output dist; Node 22.12+ (Node 22 runtime is used locally). No adapter, backend, functions, database, CMS, authentication, secrets or remote runtime service. Local fonts/images and the incident asset need no connection to the production domain.
 
 Direct slash and slashless navigation to /arsiv, /rank and /baglantilar works in Astro production preview. Unknown top-level and nested paths use the custom 404; it returns HTTP 404. The generated 404 is noindex with canonical /404.html. vercel.json trailingSlash=true configures host redirects; dist/404.html supplies the Vercel fallback. Vercel's edge redirect/status/header behavior has not been tested remotely.
 
@@ -60,8 +60,10 @@ The registry offers no compatible automatic fix. Proposed forced remedies downgr
 
 Reviewed deliverable source/config/output for credentials, tokens, private keys, .env files, TODO/FIXME, debug logging, localhost and incorrect developer identity. None found. Original public meme/source imagery remains intentionally retained; no new private financial/personal information added. This is a source review, not a guarantee against every possible secret pattern.
 
-.gitignore excludes node_modules, dist, tools/browser caches, QA results/reports, logs, .env variants, .vercel and build info. .vercelignore excludes source provenance, Memory Bank, tests and QA artifacts. Originals under docs/original stay intact; only unused efek.com2 runtime derivatives removed. The existing Git origin is https://github.com/dinosorus/efekaraer.com.git; no commit or push was made during this validation.
+.gitignore excludes node_modules, dist, tools/browser caches, QA results/reports, logs, .env variants, .vercel and build info. .vercelignore excludes source provenance, Memory Bank, tests and QA artifacts. Originals under docs/original stay intact; only unused efek.com2 runtime derivatives removed. The existing Git origin is https://github.com/KaraerDev/efekaraer.com.git; no commit or push was made during this validation.
 
-38 responsive WebP variants total **1,503,310 bytes**. Production JavaScript **5,704 bytes**, CSS **37,733 bytes**, before compression. No framework hydration, analytics, remote fonts, embeds or autoplay. The incident image is requested only when opened; evidence uses native lazy loading. All page/hidden-state copy reread together, including metadata, accessible labels, original captions, notes, toast messages, statements and footer. Authentic phrase retained exactly; public migration terms absent.
+34 responsive WebP variants total **1,370,240 bytes** after permanently removing the Can Sungur Karaer and ÇETULLAH photos. Production JavaScript **5,704 bytes**, CSS **37,733 bytes**, before compression. No framework hydration, analytics, remote fonts, embeds or autoplay. The incident image is requested only when opened; evidence uses native lazy loading. All page/hidden-state copy reread together, including metadata, accessible labels, original captions, notes, toast messages, statements and footer. Authentic phrase retained exactly; public migration terms absent.
 
 No deployment, Git push, existing-site edit or DNS change was performed. The latest requested local SEO changes have not been published; upstream advisories and browser/host verification boundaries above remain explicit.
+
+The QA counts above describe the earlier 17-exhibit state. After the two requested removals and sequential renumbering, the production build was rerun successfully and the generated archive was checked for 15 sequential cards and absence of both removed photo references. DOM and browser suites have not been rerun since those content changes.

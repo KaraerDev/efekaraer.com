@@ -1,4 +1,4 @@
-# Efe Karaer — Kişisel Mesele
+# Efe Karaer — Manifesto
 
 A Turkish, deliberately overproduced personal archive for **Efe Karaer**, built from the original public site. Production domain: https://efekaraer.com. Repository: https://github.com/KaraerDev/efekaraer.com. This project is about Efe, never the developer. No deployment has been performed.
 
@@ -30,12 +30,12 @@ Use `npm.cmd` on systems that block PowerShell script shims. The portable runtim
 | Route | Content |
 | --- | --- |
 | `/` | Editorial cover, dossier note, selected exhibits, rank ticket, profile links |
-| `/arsiv/` | All 17 original exhibits, category filters, Turkish-aware search, random exhibit |
+| `/arsiv/` | 15 exhibits numbered 001–015, category filters, Turkish-aware search, random exhibit |
 | `/rank/` | TFT history, MegaBonk #237 evidence, game ledger, joke meters, FIDE joke, statement generator |
 | `/baglantilar/` | Original profile/contact links, Sade listening snapshot |
 | `/404.html` | Custom missing-page experience |
 
-Photos have shareable URLs such as `/arsiv/#eser-7`. Old `/#gallery`, `/#rank`, and `/#signals` bookmarks forward to their new routes when JavaScript is available.
+Photos have shareable URLs such as `/arsiv/#eser-5`. The 15 remaining exhibits are numbered continuously from 001 to 015. Old `/#gallery`, `/#rank`, and `/#signals` bookmarks forward to their new routes when JavaScript is available.
 
 ## Edit content
 
@@ -44,18 +44,18 @@ Photos have shareable URLs such as `/arsiv/#eser-7`. Old `/#gallery`, `/#rank`, 
 - **`src/styles/global.css`**: color/type tokens, responsive layouts, motion, reduced-motion and print behavior.
 - **`src/styles/lore.css` / `qa-fixes.css`**: integrated lore details and small browser-observed corrections.
 - **`src/scripts/site.ts`**: progressively enhanced interactions. No framework client runtime.
-- **`docs/original/`**: original HTML/CSS, visual contact sheet, and unmodified source images. Preserved for provenance; excluded from production.
+- **`docs/original/`**: edited source HTML/CSS and retained source images. The two removed exhibits, their images, and the contact sheet that contained thumbnails are excluded; this folder is not published.
 - **`docs/content-audit.md`**: exact source links, audit findings, editorial decisions, and intentionally omitted stale claims.
 - **`docs/validation.md`**: actual browser QA, static-host readiness, audit findings and verification boundaries.
 - **`memory-bank/lore.md`**: supplied facts incorporated into the site and deliberately unused material.
 
-To add an exhibit, put its original image in `docs/original/images/`, add a stable numeric ID and entry to `exhibits`, and run `npm run optimize`. Keep existing IDs stable so shared links continue working. Collection counts derive from the data. The source-preservation test deliberately asserts the original 17 records; extend it to distinguish the preserved seed collection from new additions when expanding the archive.
+To add an exhibit, put its original image in `docs/original/images/`, add the next sequential numeric ID and entry to `exhibits`, and run `npm run optimize`. IDs determine displayed numbers and shareable permalinks, so removing an exhibit means renumbering the remaining entries. Collection counts derive from the data. The source-preservation test asserts that the current 15 captions match the retained source snapshot.
 
 Original exhibit captions are preserved verbatim. New exhibit notes are restrained asides, not invented biographical facts. No lorem ipsum, fake external links, API keys or unfinished UI placeholders are used. Any future Efe-specific lore should be sourced and written under the rules in `memory-bank/voiceAndCopy.md`; do not reintroduce personal-brand narration or warm visitor guidance.
 
 ## Assets and performance
 
-All 17 gallery images, two backgrounds and the supplied MegaBonk screenshot are retained outside `public/`. Nineteen used originals generate 38 WebP variants using Sharp, without upscaling, totaling 1.50 MB. The unused second background has no runtime derivatives. `efek.com.jpg` appears only in the optional footer incident; it loads on demand.
+The 15 retained gallery images, two backgrounds and the supplied MegaBonk screenshot are retained outside `public/`. Seventeen used originals generate 34 WebP variants using Sharp, without upscaling, totaling 1.37 MB. The unused second background has no runtime derivatives. `efek.com.jpg` appears only in the optional footer incident; it loads on demand.
 
 Images have dimensions, responsive `srcset`, and lazy loading except for the cover portrait. Barlow Condensed, DM Sans, and IBM Plex Mono are self-hosted through Fontsource. There are no embeds, analytics, autoplay audio, remote fonts, or image hotlinks. Social preview artwork is also generated locally; regenerate it with `node scripts/create-social-card.mjs`.
 

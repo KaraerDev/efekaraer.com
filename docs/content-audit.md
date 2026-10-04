@@ -38,28 +38,26 @@ All profile/contact URLs are preserved exactly. The self-link is normalized to `
 | ID | Original path | Caption | Local basename |
 | --- | --- | --- | --- |
 | 001 | image copy 16.png | Jahrein Karaer | karaer-16 |
-| 002 | image copy 14.png | Can Sungur Karaer | karaer-14 |
-| 003 | image copy 13.png | Kefen Karaer | karaer-13 |
-| 004 | image copy 12.png | ÇETULLAH | karaer-12 |
-| 005 | image copy 11.png | 3LOT3RR0IST | karaer-11 |
-| 006 | image copy 10.png | 3LOT3RR0IST | karaer-10 |
-| 007 | image copy 9.png | Çakma Mühendis Karaer | karaer-9 |
-| 008 | image copy 8.png | Anafen Karaer | karaer-8 |
-| 009 | image copy 7.png | Çakma Mühendis Karaer v2 | karaer-7 |
-| 010 | image copy 4.png | Çeçen Karaer | karaer-4 |
-| 011 | image copy 5.png | Mohikan Karaer | karaer-5 |
-| 012 | image copy 18.png | Yakup TV Karaer | karaer-18 |
-| 013 | image copy 20.png | Babaanne Karaer | karaer-20 |
-| 014 | image copy 21.png | Akide Sugar Karaer | karaer-21 |
-| 015 | image copy 15.png | Nevada Karaer | karaer-15 |
-| 016 | image copy 17.png | İtici Karaer | karaer-17 |
-| 017 | image copy 6.png | hmm nt happen | karaer-6 |
+| 002 | image copy 13.png | Kefen Karaer | karaer-13 |
+| 003 | image copy 11.png | 3LOT3RR0IST | karaer-11 |
+| 004 | image copy 10.png | 3LOT3RR0IST | karaer-10 |
+| 005 | image copy 9.png | Çakma Mühendis Karaer | karaer-9 |
+| 006 | image copy 8.png | Anafen Karaer | karaer-8 |
+| 007 | image copy 7.png | Çakma Mühendis Karaer v2 | karaer-7 |
+| 008 | image copy 4.png | Çeçen Karaer | karaer-4 |
+| 009 | image copy 5.png | Mohikan Karaer | karaer-5 |
+| 010 | image copy 18.png | Yakup TV Karaer | karaer-18 |
+| 011 | image copy 20.png | Babaanne Karaer | karaer-20 |
+| 012 | image copy 21.png | Akide Sugar Karaer | karaer-21 |
+| 013 | image copy 15.png | Nevada Karaer | karaer-15 |
+| 014 | image copy 17.png | İtici Karaer | karaer-17 |
+| 015 | image copy 6.png | hmm nt happen | karaer-6 |
 
-The two 1920×1080 backgrounds, `efek.com.jpg` and `efek.com2.jpg`, were also downloaded. Gallery images were visually inspected together in a contact sheet; the second background was inspected separately. The helmet portrait is the new cover image. The originals are retained verbatim; production receives only optimized WebP derivatives.
+The two 1920×1080 backgrounds, `efek.com.jpg` and `efek.com2.jpg`, were also downloaded. Gallery images were visually inspected together; the second background was inspected separately. The helmet portrait is the new cover image. Can Sungur Karaer and ÇETULLAH were later removed at the user’s request, along with their source image files, snapshot entries, generated variants, and the contact sheet containing their thumbnails. Remaining exhibit IDs were renumbered sequentially 001–015; production receives only optimized WebP derivatives.
 
 ## Editorial decisions
 
-- Retain the original captions exactly, including duplicates and unusual spellings. Preserve “Mepple Enjoyer” rather than guessing a correction.
+- Retain the remaining original captions exactly, including duplicates and unusual spellings. Preserve “Mepple Enjoyer” rather than guessing a correction.
 - Rewrite misleading original alt descriptions after looking at the actual assets; many described unrelated scenes.
 - The initial first-person direction was superseded by the user's persona clarification: detached, terse, assured wording with minimal first-person framing. Never mention the developer or claim this is their portfolio. See memory-bank/voiceAndCopy.md.
 - Treat MASTER as an archived self-report, with an explicit current-profile link. Do not fabricate LP, placements, match histories, or recent performance.

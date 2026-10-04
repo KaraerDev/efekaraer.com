@@ -68,7 +68,7 @@ test('navigation, archive search, random selection and native lightbox keyboard 
   await page.getByRole('searchbox').fill('olmayan kayıt');
   await expect(page.getByRole('heading', { name: 'Kayıt yok.' })).toBeVisible();
   await page.getByRole('button', { name: 'Hepsini göster' }).click();
-  await expect(page.locator('.archive-grid .exhibit:visible')).toHaveCount(17);
+  await expect(page.locator('.archive-grid .exhibit:visible')).toHaveCount(15);
   await page.getByRole('button', { name: 'Rastgele kayıt' }).click();
   await expect(page.locator('#lightbox')).toBeVisible();
   const before = await page.locator('#lightbox-title').innerText();
@@ -95,7 +95,7 @@ test('navigation, archive search, random selection and native lightbox keyboard 
   await expect(page.locator('#random-exhibit')).toBeFocused();
   // Native dialog close dispatches its cleanup event asynchronously.
   await expect.poll(() => page.evaluate(() => document.documentElement.style.overflow)).toBe('');
-  await page.goto('/arsiv/#eser-7');
+  await page.goto('/arsiv/#eser-5');
   await expect(page.locator('#lightbox-title')).toHaveText('Çakma Mühendis Karaer');
   await page.getByRole('button', { name: 'Fotoğrafı kapat' }).click();
 });

@@ -1,6 +1,6 @@
 # Efe's voice — authoritative characterization
 
-The user approved the **Efe Karaer — Kişisel Mesele** concept and visual design. Preserve it. This characterization supersedes the initial implementation's first-person/approachable introduction direction.
+The user approved the **Efe Karaer — Manifesto** concept and visual design. Preserve it. This characterization supersedes the initial implementation's first-person/approachable introduction direction.
 
 ## Character
 
@@ -21,7 +21,7 @@ The site glorifies Efe. It is not a roast, an outsider's parody, or the portrait
 - Current sparse uses: `alr brom` after repeated stamp clicks, `nt ya happen` in the statement rotation, and `hmm.` / `tamam kes` in the optional footer incident. These are interaction details, not section themes. The supplied insult is not used.
 - Never publish migration framing: `eski site`, `önceki site`, `old site`, `previous site`, `former website`, or equivalent references. Internal provenance may discuss source history. Archival/not-live labels remain necessary without mentioning a predecessor site.
 - Preserve clear accessible names, image descriptions, errors, and recovery instructions. Detachment must not make controls obscure or user-hostile.
-- Preserve original gallery captions verbatim, factual content, exact outbound links, and established jokes such as “İyi mi çok mu faça?”, TFT GOD, the old TFT quote, and the explicitly fictional FIDE 3500 claim.
+- Preserve remaining gallery captions verbatim, factual content, exact outbound links, and established jokes such as “İyi mi çok mu faça?”, TFT GOD, the old TFT quote, and the explicitly fictional FIDE 3500 claim.
 - Archived rank must still be labeled as not live. FIDE 3500 must still be labeled as a joke. Brevity is not permission to erase factual context.
 - No new biography, achievements, dates, anecdotes, or factual assumptions. Photo notes may refer to visible content or be clearly non-factual dry asides.
 - User-supplied facts may enrich existing pages; see lore.md for what actually shipped. Use records/marginalia rather than interests cards or a biography. Never convert snapshots (Sade 193, MegaBonk #237, TFT history) into live counters/rank claims.

@@ -3,14 +3,14 @@ import Layout from '../layouts/Layout.astro';
 import Photo from '../components/Photo.astro';
 import ExhibitCard from '../components/ExhibitCard.astro';
 import { exhibits, links } from '../data/content';
-const featured = [exhibits[6], exhibits[10], exhibits[16]];
+const featured = [exhibits[5], exhibits[9], exhibits[exhibits.length - 1]];
 ---
 <Layout>
   <section class="hero shell">
     <div class="hero-index mono"><span>EFE KARAER / ANA KAYIT</span><span>CİLT 01 — KARAER ARŞİVİ</span></div>
     <div class="hero-grid">
-      <div class="hero-copy"><p class="eyebrow"><span class="status-dot"></span> KİŞİSEL MESELE.</p><h1>EFE<br /><span>KARAER</span><sup>®</sup></h1><div class="hero-intro"><span class="hero-asterisk" aria-hidden="true">✳</span><p>SANSARSALVO55.<br />TFT.<br /><span class="muted">What a legend.</span></p></div><a href="/arsiv/" class="button button-dark">Arşivi aç <span aria-hidden="true">↗</span></a></div>
-      <div class="hero-art"><span class="handwritten">çok iyi site yaptım.</span><button class="hero-photo" data-exhibit="7" aria-label="Çakma Mühendis Karaer portresini aç"><Photo name="karaer-9" alt="Baret takan Efe’nin siyah beyaz portresi" eager sizes="(max-width: 760px) 85vw, 42vw" /><span class="hero-photo-index mono">EK / 007<br />ORİJİNAL KOPYA</span><span class="hero-photo-expand" aria-hidden="true">↗</span></button><button class="approval-seal" id="seal" aria-label="Efe onay mührünü bas"><span>EFE KARAER</span><strong>EK</strong><span>ONAYLI ✓</span></button><div class="hero-caption mono"><span>ŞEKİL 01. ÇAKMA MÜHENDİS KARAER</span><span>ARŞİV / 007</span></div></div>
+      <div class="hero-copy"><p class="eyebrow"><span class="status-dot"></span> MANİFESTO.</p><h1>EFE<br /><span>KARAER</span><sup>®</sup></h1><div class="hero-intro"><span class="hero-asterisk" aria-hidden="true">✳</span><p>SANSARSALVO55.<br />TFT.<br /><span class="muted">What a legend.</span></p></div><a href="/arsiv/" class="button button-dark">Arşivi aç <span aria-hidden="true">↗</span></a></div>
+      <div class="hero-art"><span class="handwritten">çok iyi site yaptım.</span><button class="hero-photo" data-exhibit="5" aria-label="Çakma Mühendis Karaer portresini aç"><Photo name="karaer-9" alt="Baret takan Efe’nin siyah beyaz portresi" eager sizes="(max-width: 760px) 85vw, 42vw" /><span class="hero-photo-index mono">EK / 005<br />ORİJİNAL KOPYA</span><span class="hero-photo-expand" aria-hidden="true">↗</span></button><button class="approval-seal" id="seal" aria-label="Efe onay mührünü bas"><span>EFE KARAER</span><strong>EK</strong><span>ONAYLI ✓</span></button><div class="hero-caption mono"><span>ŞEKİL 01. ÇAKMA MÜHENDİS KARAER</span><span>ARŞİV / 005</span></div></div>
     </div>
     <div class="hero-bottom mono"><span>SANSARSALVO55 / TR</span><span>İYİ Mİ ÇOK MU FAÇA?</span><a href="#dosya">DOSYAYI AÇ ↓</a></div>
   </section>

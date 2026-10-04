@@ -106,13 +106,13 @@ test('every local link and image in production output resolves; images have alt 
   }
 });
 
-test('all 17 original captions and original public profile URLs are preserved', async () => {
+test('the 15 retained original captions and original public profile URLs are preserved', async () => {
   const original = new JSDOM(await readFile('docs/original/index.html', 'utf8'));
   const archive = await page();
   const current = archive.window.document;
   const exhibits = JSON.parse(current.querySelector('#exhibit-data').textContent);
   const captions = [...original.window.document.querySelectorAll('.photo span')].map(node => node.textContent.trim());
-  assert.equal(exhibits.length, 17);
+  assert.equal(exhibits.length, 15);
   assert.deepEqual(exhibits.map(item => item.title), captions);
   const directory = new JSDOM(await readFile('dist/baglantilar/index.html', 'utf8'));
   const links = [...directory.window.document.querySelectorAll('a')].map(link => link.getAttribute('href'));
@@ -137,7 +137,7 @@ test('category filters combine with Turkish-aware search and expose an empty sta
   assert.equal(visible().length, 0);
   assert.equal(document.querySelector('#archive-empty').hidden, false);
   document.querySelector('#reset-search').click();
-  assert.equal(visible().length, 17);
+  assert.equal(visible().length, 15);
   assert.equal(search.value, '');
   dom.window.close();
 });
@@ -152,7 +152,7 @@ test('lightbox opens a real exhibit, navigates cyclically and restores focus/scr
   assert.equal(document.documentElement.style.overflow, 'hidden');
   modal.dispatchEvent(new KeyboardEvent('keydown', { key: 'ArrowLeft' }));
   assert.equal(document.querySelector('#lightbox-title').textContent, 'hmm nt happen');
-  assert.equal(dom.window.location.hash, '#eser-17');
+  assert.equal(dom.window.location.hash, '#eser-15');
   document.querySelector('.photo-next').click();
   assert.equal(document.querySelector('#lightbox-title').textContent, 'Jahrein Karaer');
   document.querySelector('[data-close]').click();
@@ -164,12 +164,12 @@ test('lightbox opens a real exhibit, navigates cyclically and restores focus/scr
 });
 
 test('direct exhibit URLs open correctly and copy an archive permalink', async () => {
-  const dom = await page('index.html', '#eser-7'); const { document } = dom.window;
+  const dom = await page('index.html', '#eser-5'); const { document } = dom.window;
   assert.equal(document.querySelector('#lightbox').open, true);
   assert.equal(document.querySelector('#lightbox-title').textContent, 'Çakma Mühendis Karaer');
   document.querySelector('#exhibit-copy').click();
   await setImmediate();
-  assert.equal(dom.window.copiedText, 'https://efekaraer.com/arsiv/#eser-7');
+  assert.equal(dom.window.copiedText, 'https://efekaraer.com/arsiv/#eser-5');
   assert.ok(document.querySelector('#lightbox #toast')); // Announcement must remain in the active modal.
   dom.window.close();
 });

@@ -1,8 +1,8 @@
 # Product context
 
-The approved production quality itself is the joke: a collector's edition/archive devoted to Efe Karaer. Name: **Efe Karaer — Kişisel Mesele**. Warm paper, ink, vermilion, exaggerated condensed headlines and exhibit numbering. The contrast is elaborate presentation with almost indifferent, assured copy. Do not explain the contrast on the site.
+The approved production quality itself is the joke: a collector's edition/archive devoted to Efe Karaer. Name: **Efe Karaer — Manifesto**. Warm paper, ink, vermilion, exaggerated condensed headlines and exhibit numbering. The contrast is elaborate presentation with almost indifferent, assured copy. Do not explain the contrast on the site.
 
-Visitors should immediately recognize Efe, explore the original 17-photo collection, discover jokes without losing usability, and reach real gaming/social profiles. The archive is a destination rather than filler under a generic portfolio hero.
+Visitors should immediately recognize Efe, explore the 15-photo collection, discover jokes without losing usability, and reach real gaming/social profiles. The archive is a destination rather than filler under a generic portfolio hero.
 
 Keep factual content and joke UI distinct. The Master rank is explicitly archival, FIDE 3500 is explicitly a joke, new anecdotes should come from Efe. No developer biography, fake job history, guessed social links, or unverified live stats.
 

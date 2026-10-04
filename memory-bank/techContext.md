@@ -6,7 +6,7 @@ Astro 7, TypeScript 6, ordinary CSS, Fontsource Barlow Condensed/DM Sans/IBM Ple
 
 Commands: `npm run dev`, `npm run build`, `npm run preview`, `npm run check`, `npm run lint`, `npm test`, `npm run optimize`. Build before tests: tests execute the production client bundle against generated HTML.
 
-Network calls and npm installs needed sandbox escalation. No external writes or site publishing were performed. The local Git origin is https://github.com/dinosorus/efekaraer.com.git; use an explicit request before committing or pushing.
+Network calls and npm installs needed sandbox escalation. No external writes or site publishing were performed. The local Git origin is https://github.com/KaraerDev/efekaraer.com.git; use an explicit request before committing or pushing.
 
 The connector remains unavailable, but the user authorized lightweight dev-only browser tooling. Playwright Test and axe-core/playwright are now dev dependencies. Downloaded Chromium is in ignored tools/browsers; set PLAYWRIGHT_BROWSERS_PATH to that directory in this workspace. `npm run test:browser` runs four viewport projects with screenshots, real clipboard/modal/navigation behavior and axe checks. Build first. Screenshot/trace/HTML report outputs are ignored. Lighthouse, Firefox/Safari and physical devices were not tested.
 

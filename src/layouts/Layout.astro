@@ -25,14 +25,14 @@ const profileStructuredData = {
       '@type': 'WebSite',
       '@id': new URL('/#website', Astro.site).href,
       name: 'Efe Karaer',
-      alternateName: 'Efe Karaer — Kişisel Mesele',
+      alternateName: 'Efe Karaer — Manifesto',
       url: new URL('/', Astro.site).href,
     },
     {
       '@type': 'ProfilePage',
       '@id': new URL('/#profile', Astro.site).href,
       url: new URL('/', Astro.site).href,
-      name: 'Efe Karaer — Kişisel Mesele',
+      name: 'Efe Karaer — Manifesto',
       mainEntity: { '@id': profileId },
     },
     {
@@ -58,22 +58,22 @@ const profileStructuredData = {
     <meta property="og:type" content="website" /><meta property="og:locale" content="tr_TR" /><meta property="og:site_name" content="Efe Karaer" />
     <meta property="og:title" content={title} /><meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
-    <meta property="og:image" content={socialImage} /><meta property="og:image:alt" content="Efe Karaer — Kişisel Mesele sosyal önizleme görseli" />
+    <meta property="og:image" content={socialImage} /><meta property="og:image:alt" content="Efe Karaer — Manifesto sosyal önizleme görseli" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content={title} /><meta name="twitter:description" content={description} /><meta name="twitter:image" content={socialImage} /><meta name="twitter:image:alt" content="Efe Karaer — Kişisel Mesele sosyal önizleme görseli" />
+    <meta name="twitter:title" content={title} /><meta name="twitter:description" content={description} /><meta name="twitter:image" content={socialImage} /><meta name="twitter:image:alt" content="Efe Karaer — Manifesto sosyal önizleme görseli" />
     {section === 'cover' && <script type="application/ld+json" set:html={JSON.stringify(profileStructuredData).replace(/</g, '\\u003c')} />}
     <title>{title}</title>
   </head>
   <body data-section={section}>
     <a class="skip-link" href="#main">İçeriğe geç</a>
     <header class="site-header shell">
-      <a href="/" class="wordmark" aria-label="Efe Karaer, ana sayfa">EK<span class="brand-star" aria-hidden="true">✳</span><span class="brand-caption mono">EFE KARAER<br />KİŞİSEL MESELE.</span></a>
+      <a href="/" class="wordmark" aria-label="Efe Karaer, ana sayfa">EK<span class="brand-star" aria-hidden="true">✳</span><span class="brand-caption mono">EFE KARAER<br />MANİFESTO.</span></a>
       <nav aria-label="Ana menü">{nav.map((item, index) => <a href={item.href} aria-current={section === item.id ? 'page' : undefined}><sup>0{index + 1}</sup>{item.label}{item.id === 'archive' && <span class="nav-count">{exhibits.length}</span>}</a>)}</nav>
       <span class="header-edition mono">BAĞIMSIZ YAYIN<br />TEK KİŞİLİK KADRO</span>
     </header>
     <main id="main"><slot /></main>
     <footer class="site-footer shell">
-      <div class="footer-top"><p>Efe Karaer.<br /><em>Kişisel Mesele.</em></p><a href="mailto:efekaraer00@gmail.com" class="footer-contact">Reklam & işbirliği <span>efekaraer00@gmail.com ↗</span></a></div>
+      <div class="footer-top"><p>Efe Karaer.<br /><em>Manifesto.</em></p><a href="mailto:efekaraer00@gmail.com" class="footer-contact">Reklam & işbirliği <span>efekaraer00@gmail.com ↗</span></a></div>
       <div class="footer-bottom mono"><a href="/">© EFE KARAER <span>— KİŞİSEL ARŞİV</span></a><button id="footer-secret" aria-label="Ek kaydı aç" aria-haspopup="dialog" aria-controls="incident">EK NOT ↗</button><a href="#main">YUKARI ↑</a></div>
     </footer>
     <Lightbox />
